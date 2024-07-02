@@ -17,6 +17,7 @@ function App() {
       axios
         .get("https://techbuzzers.somee.com/api/Admin/getRequest")
         .then((res) => {
+          console.log(res.data);
           setResponseBody(res.data);
         });
     } catch (error) {

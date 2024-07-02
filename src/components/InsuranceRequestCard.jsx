@@ -18,10 +18,10 @@ const InsuranceRequestCard = ({ insuranceRequest }) => {
   const handleReject = async () => {
     try {
       await axios.post(
-        "https://techbuzzers.somee.com/api/Admin/approveInsurance",
+        "https://techbuzzers.somee.com/api/Admin/rejectInsurance",
         { insuranceId: insuranceRequest.insuranceId }
       );
-      toast.success("Approved");
+      toast.success("Rejected");
     } catch (error) {
       toast.error("error occured");
       console.log(error);
@@ -73,12 +73,12 @@ const InsuranceRequestCard = ({ insuranceRequest }) => {
         >
           Approve
         </button>
-        {/* <button
+        <button
           className="border-2 border-black bg-red-300 p-2 rounded-md hover:bg-red-500"
           onClick={handleReject}
         >
           Reject
-        </button> */}
+        </button>
       </div>
     </div>
   );
